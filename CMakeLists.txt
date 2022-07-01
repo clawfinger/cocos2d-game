@@ -1,28 +1,3 @@
-#/****************************************************************************
-# Copyright (c) 2013-2014 cocos2d-x.org
-# Copyright (c) 2015-2017 Chukong Technologies Inc.
-#
-# http://www.cocos2d-x.org
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-# THE SOFTWARE.
-# ****************************************************************************/
-
 cmake_minimum_required(VERSION 3.6)
 
 set(APP_NAME GameProject)
@@ -56,12 +31,26 @@ endif()
 
 # add cross-platforms source files and header files 
 list(APPEND GAME_SOURCE
-     Classes/AppDelegate.cpp
-     Classes/HelloWorldScene.cpp
+     src/AppDelegate.cpp
+     src/HelloWorldScene.cpp
+     src/ECS/EntityContainer.cpp
+     src/ECS/Systems/SystemBase.cpp
+     src/Utils/Logger.cpp
+     src/Utils/Utility.cpp
      )
 list(APPEND GAME_HEADER
-     Classes/AppDelegate.h
-     Classes/HelloWorldScene.h
+     src/AppDelegate.h
+     src/HelloWorldScene.h
+     src/ECS/Entity.h
+     src/ECS/EntityContainer.h
+     src/ECS/Components/ComponentBase.h
+     src/ECS/Systems/SystemBase.h
+     src/Utils/Meta.h
+     src/Utils/Logger.h
+     src/Utils/Utility.h
+     src/DiContainer/DiContainer.h
+     src/DiContainer/Factory.h
+     src/DiContainer/ConstructingFunctions.h
      )
 
 if(ANDROID)
@@ -131,7 +120,7 @@ endif()
 
 target_link_libraries(${APP_NAME} cocos2d)
 target_include_directories(${APP_NAME}
-        PRIVATE Classes
+        PRIVATE src
         PRIVATE ${COCOS2DX_ROOT_PATH}/cocos/audio/include/
 )
 

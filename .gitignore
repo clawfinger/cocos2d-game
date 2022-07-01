@@ -1,0 +1,12 @@
+CMakeLists.txt.user
+Resources/
+cocos2d/
+proj.android/app/
+proj.android/build.gradle
+proj.android/gradle.properties
+proj.android/gradle/
+proj.android/gradlew
+proj.android/gradlew.bat
+proj.android/settings.gradle
+proj.ios_mac/
+
