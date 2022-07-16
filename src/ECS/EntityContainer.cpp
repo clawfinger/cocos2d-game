@@ -1,4 +1,5 @@
 #include "EntityContainer.h"
+
 #include "../Utils/Meta.h"
 
 EntityContainer::EntityContainer() : m_idCounter(0)
@@ -24,7 +25,7 @@ EntityId EntityContainer::createEntity(const StringList & componentList)
 {
 	EntityId newEntityId = m_idCounter++;
 	//TODO: Move component creation to object pool to prevent memory fragmentation
-	m_entityContainer.emplace(newEntityId, EntityData(componentList, std::vector<ComponentBase*>()));
+    m_entityContainer.emplace(newEntityId, EntityData(componentList, std::vector<ComponentBase*>()));
 	for (const std::string& component : componentList)
 	{
 		addComponentToEntity(newEntityId, component);

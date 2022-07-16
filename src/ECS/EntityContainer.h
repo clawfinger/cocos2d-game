@@ -29,7 +29,6 @@ private:
 
 private:
 	EntityId m_idCounter;
-	std::vector<ComponentBase*> m_entityComponents;
 	std::unordered_map <EntityId, EntityData> m_entityContainer;
 	std::unordered_map<std::string, std::function<ComponentBase*(void)>> m_componentFactories;
 };

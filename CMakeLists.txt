@@ -37,6 +37,7 @@ list(APPEND GAME_SOURCE
      src/ECS/Systems/SystemBase.cpp
      src/Utils/Logger.cpp
      src/Utils/Utility.cpp
+     src/GameplayScene.cpp
      )
 list(APPEND GAME_HEADER
      src/AppDelegate.h
@@ -51,6 +52,7 @@ list(APPEND GAME_HEADER
      src/DiContainer/DiContainer.h
      src/DiContainer/Factory.h
      src/DiContainer/ConstructingFunctions.h
+     src/GameplayScene.h
      )
 
 if(ANDROID)
