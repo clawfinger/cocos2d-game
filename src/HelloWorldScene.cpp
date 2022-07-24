@@ -17,7 +17,7 @@ static void problemLoading(const char* filename)
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-    //////////////////////////////
+    //////////////////////////////testing commit to github
     // 1. super init first
     if ( !Scene::init() )
     {
